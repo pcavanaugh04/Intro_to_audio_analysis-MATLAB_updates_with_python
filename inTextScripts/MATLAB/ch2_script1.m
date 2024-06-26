@@ -4,7 +4,7 @@
 Fs = 16000; Ts = 1/Fs;         % Sampling freq, sampling period
 plot_time = 0:Ts:0.1;               % Define when sampling occurs (0.1 seconds)
 play_time = 0:Ts:2;
-Freqs = 2*[261.63 329.63 392];         % Frequencies of desired signals
+Freqs = [261.63 329.63 392];         % Frequencies of desired signals
 
 % Initialize matrix of zeros to populate signal values
 plot_Xs = zeros(length(Freqs), length(plot_time));
