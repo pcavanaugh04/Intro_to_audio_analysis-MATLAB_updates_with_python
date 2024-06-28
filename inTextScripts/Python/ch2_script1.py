@@ -6,6 +6,7 @@ Created on Wed Jun 26 15:36:42 2024
 import numpy as np
 import math as m
 import matplotlib.pyplot as plt
+from scipy.io.wavfile import write
 import sounddevice as sd
 
 # Script 1 Chapter 2
@@ -36,8 +37,8 @@ play_x = play_Xs[0] + play_Xs[1] + play_Xs[2]
 # Normalize Values
 max_plot_x = max(plot_x)
 max_play_x = max(play_x)
-plot_x = [x / max_plot_x for x in plot_x]
-play_x = [x / max_play_x for x in play_x]
+plot_x = np.array([x / max_plot_x for x in plot_x])
+play_x = np.array([x / max_play_x for x in play_x])
 
 # Visualize The Signals
 # Create a figure and subplots
@@ -78,5 +79,9 @@ plt.tight_layout(rect=[0, 0, 1, 0.95])
 plt.show()
 
 # Play the signal
-sd.play(play_x, Fs)
-sd.wait()
+# sd.play(play_x, Fs)
+# sd.wait()
+
+# Save signal to file
+save_dir = r"C:\Users\pcavana\OneDrive - purdue.edu\RESEC\Projects\Audio Analysis\Refrence Material\Intro to Audio Analysis - MATLAB - Giannakopoulos-Pikrakis\Exercise Outputs"
+write(f"{save_dir}\ch2_script1_output.wav", Fs, play_x)
