@@ -1,0 +1,28 @@
+brake_PID:
+  OP_filter_time: 0.2
+  PV_filter_time: 0.2
+  k_d: 0.0
+  k_i: 0.3
+  k_p: 1.5
+branch_name: stable
+cassette_offset: 88.0
+chain_length: 6.011
+chainring_offset: 88.0
+commit_ID: 7ef521ecc2e450f7b96c8cf39cd208374f7bc814
+contamination: none
+motor_PID:
+  OP_filter_time: 0.5
+  PV_filter_time: 1.5
+  k_d: 0.01
+  k_i: 0.25
+  k_p: 0.4
+  ramp_rate: 20.0
+  steady_state_threshold: 0.005
+notes: '2nd char after: 6h, 3X char, 6hr, 3x char, 20min warmup'
+power_PID:
+  OP_filter_time: 0.2
+  PV_filter_time: 2.0
+  k_d: 0.0
+  k_i: 0.0009
+  k_p: 0.006
+test_name: char
